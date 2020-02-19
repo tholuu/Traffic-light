@@ -8,36 +8,9 @@ const GREEN = 2;
 
 
 class TrafficLight extends Component {
-    constructor() {
-        super();
-        this.state = {
-            currentColor: RED
-        }
-        setInterval(() => {
-            console.log(this.state.currentColor)
-            this.setState({
-                currentColor: this.getNextColor(this.state.currentColor)
-            })
-        }, 1000)
-    }
 
-
-    getNextColor(color) {
-        switch (color) {
-            case RED:
-
-                return ORANGE;
-
-            case ORANGE:
-
-                return GREEN;
-            case GREEN:
-
-                return RED;
-        }
-    }
     render() {
-        const { currentColor } = this.state
+        const { currentColor } = this.props
         console.log('rendering.....')
         return (
             <div className="TrafficLight">
